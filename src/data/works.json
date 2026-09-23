@@ -1,0 +1,135 @@
+[
+  {
+    "title": "Demon Core Disco Ball",
+    "path": "/personal-projects/demon-core-disco-ball/",
+    "section": "personal-projects",
+    "description": "A campy art meme",
+    "years": "2025",
+    "year": 2025
+  },
+  {
+    "title": "Can of Bliss",
+    "path": "/design-web-and-film/can-of-bliss/",
+    "section": "design-web-and-film",
+    "description": "Creating a unique point of sale experience for cannabis",
+    "hero": "/attachments/AR-stand_1C_brighter-for-print-1200.png",
+    "years": "2019",
+    "year": 2019,
+    "featured": true
+  },
+  {
+    "title": "Unifi Wall Mount",
+    "path": "/personal-projects/unifi-wall-mount/",
+    "section": "personal-projects",
+    "description": "A nice way to organize a simple Unifi network",
+    "years": "2016–2017",
+    "year": 2016
+  },
+  {
+    "title": "Alphastreet",
+    "path": "/design-web-and-film/alphastreet/",
+    "section": "design-web-and-film",
+    "description": "",
+    "years": "2015–2017",
+    "year": 2015
+  },
+  {
+    "title": "Routes",
+    "path": "/design-web-and-film/routes/",
+    "section": "design-web-and-film",
+    "description": "",
+    "years": "2014",
+    "year": 2014
+  },
+  {
+    "title": "Busey Ipsum",
+    "path": "/design-web-and-film/busey-ipsum/",
+    "section": "design-web-and-film",
+    "description": "",
+    "hero": "/attachments/Screenshot%202023-09-07%20at%205.28.00%20PM.png",
+    "years": "2012–2017",
+    "year": 2012
+  },
+  {
+    "title": "Nextwave Media Lab",
+    "path": "/design-web-and-film/nextwave-media-lab/",
+    "section": "design-web-and-film",
+    "description": "A ragtag group of weirdos oddly placed into a corporate media space.",
+    "years": "2012–2016",
+    "year": 2012
+  },
+  {
+    "title": "Silkroute Global",
+    "path": "/design-web-and-film/silkroute-global/",
+    "section": "design-web-and-film",
+    "description": "Maintaining client facing assets for retail SaaS provider",
+    "years": "2012–2015",
+    "year": 2012
+  },
+  {
+    "title": "SudoTV",
+    "path": "/design-web-and-film/sudotv/",
+    "section": "design-web-and-film",
+    "description": "An attempt to make an online media company",
+    "years": "2009–2015",
+    "year": 2009
+  },
+  {
+    "title": "DetroitMusic.TV",
+    "path": "/design-web-and-film/detroitmusictv/",
+    "section": "design-web-and-film",
+    "description": "A website and community showcasing the best music Detroit has to offer.",
+    "years": "2008–2015",
+    "year": 2008
+  },
+  {
+    "title": "App Concepts",
+    "path": "/collections/app-concepts/",
+    "section": "collections",
+    "description": "Not everything gets made, but I'm still proud of this work."
+  },
+  {
+    "title": "clomads.com",
+    "path": "/design-web-and-film/clomadscom/",
+    "section": "design-web-and-film",
+    "description": "Variations of my personal site over the years"
+  },
+  {
+    "title": "Gary Bussy",
+    "path": "/personal-projects/gary-bussy/",
+    "section": "personal-projects",
+    "description": "A platform for testing DIY off-grid automation hardware. Also my house.",
+    "hero": "/attachments/IMG_2909.JPG",
+    "featured": true,
+    "status": "Ongoing"
+  },
+  {
+    "title": "Logos",
+    "path": "/collections/logos/",
+    "section": "collections",
+    "description": "Logo design is my passion"
+  },
+  {
+    "title": "Origami",
+    "path": "/concepts/origami/",
+    "section": "concepts",
+    "description": "",
+    "status": "Shelved"
+  },
+  {
+    "title": "Single Motor Control For Klipper",
+    "path": "/concepts/single-motor-control-for-klipper/",
+    "section": "concepts",
+    "description": "RP2040 was over-hyped, but I kinda love how Klipper has implemented it.",
+    "status": "Concept"
+  },
+  {
+    "title": "Voidbox Industries",
+    "path": "/personal-projects/vdbxio-voidbox-industries/",
+    "section": "personal-projects",
+    "description": "My current retail and manufacturing brand for open source hardware",
+    "hero": "/attachments/Flip%20C3%20oshwalab.jpg",
+    "featured": true,
+    "status": "Ongoing"
+  }
+]

@@ -1,0 +1,56 @@
+/* clomads.com — brand tokens over starlight-theme-luna and Starlight. Layout lives in the theme.
+   Palette from the 2017 clomads swatch sheet: purple #b74aff, pink #ffb8d1, sage #c5dac1, blue #4bb3fd, slate #4d5061.
+   Chakra Petch's clipped corners echo the logo's octagonal PCB letterforms. */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --luna-display: "Chakra Petch", var(--sl-font);
+  --sl-font: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sl-font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --luna-logo: 9rem;
+
+  /* dark */
+  --sl-color-accent-low: #2e1745;
+  --sl-color-accent: #c77bff;
+  --sl-color-accent-high: #e6c7ff;
+  --sl-color-white: #ecebf0;
+  --sl-color-gray-1: #dddce3;
+  --sl-color-gray-2: #cfcdd6;
+  --sl-color-gray-3: #a3a1ad;
+  --sl-color-gray-4: #7c7a87;
+  --sl-color-gray-5: #3b3a44;
+  --sl-color-gray-6: #22212a;
+  --sl-color-black: #131218;
+  --luna-tint: linear-gradient(135deg, #ffb8d1 0%, #b74aff 55%, #4bb3fd 100%);
+  --luna-btn-shop: #c5dac1; --luna-btn-source: #4bb3fd; --luna-btn-cad: #ffc46b; --luna-btn-doc: #c77bff; --luna-btn-media: #ff8fb8;
+
+  --luna-note-bg: #10324a;    --luna-note-edge: #4bb3fd;    --luna-note-text: #a9dcff;
+  --luna-tip-bg: #25331f;     --luna-tip-edge: #9fc496;     --luna-tip-text: #d3e8ce;
+  --luna-caution-bg: #43320f; --luna-caution-edge: #ffc46b; --luna-caution-text: #ffe0ad;
+  --luna-danger-bg: #4a1428;  --luna-danger-edge: #ff6b9d;  --luna-danger-text: #ffc0d6;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #f0dcff;
+  --sl-color-accent: #8e24d6;
+  --sl-color-accent-high: #4d0a7a;
+  --sl-color-white: #1b1a20;
+  --sl-color-gray-1: #2b2a31;
+  --sl-color-gray-2: #413f48;
+  --sl-color-gray-3: #66646e;
+  --sl-color-gray-4: #8a8893;
+  --sl-color-gray-5: #d9d7de;
+  --sl-color-gray-6: #f6f5f8;
+  --sl-color-black: #ffffff;
+  --luna-btn-shop: #5f8f55; --luna-btn-source: #1f8fd6; --luna-btn-cad: #c98a1a; --luna-btn-doc: #8e24d6; --luna-btn-media: #d63d78;
+  --luna-note-bg: #d7eeff;    --luna-note-edge: #2a9ae8;    --luna-note-text: #0c4a75;
+  --luna-tip-bg: #e3efe0;     --luna-tip-edge: #6f9a66;     --luna-tip-text: #2f4a2a;
+  --luna-caution-bg: #ffefd2; --luna-caution-edge: #e0a23a; --luna-caution-text: #6b4a0c;
+  --luna-danger-bg: #ffe0ea;  --luna-danger-edge: #e0457e;  --luna-danger-text: #7a1638;
+}
+
+/* YouTube embeds from the vault */
+.sl-markdown-content .video { aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--sl-color-gray-6); }
+.sl-markdown-content .video iframe { width: 100%; height: 100%; border: 0; display: block; }
+.sl-markdown-content img { border-radius: 10px; }
+.sl-markdown-content figure { margin: 1.5rem 0; }
+.sl-markdown-content figcaption { margin-top: 0.5rem; font-size: 0.85rem; color: var(--sl-color-gray-3); }
