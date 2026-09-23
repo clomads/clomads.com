@@ -1,0 +1,64 @@
+name: validate
+on:
+  push:
+    branches: ['**']
+permissions:
+  contents: write
+jobs:
+  build-and-check:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build derived files (Work template)
+        run: npm run build
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "nothing generated"; else
+            git commit -m "build: regenerate derived files [skip ci]" && git push
+          fi
+      - run: npm run check
+
+  publish:
+    needs: build-and-check
+    if: github.ref == 'refs/heads/main' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check out the site repo with the deploy key
+        env:
+          KEY: ${{ secrets.SITE_DEPLOY_KEY }}
+          BRANCH: ${{ vars.SITE_BRANCH || 'astro' }}
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts 2>/dev/null
+          git clone -q --branch "$BRANCH" --depth 1 git@github.com:clomads/portfolio.git ../site
+      - name: Publish public notes into the site
+        run: node scripts/publish.mjs --out ../site
+      - name: Push if anything changed
+        run: |
+          cd ../site
+          git config user.name "clomads-vault[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "site unchanged"; else
+            git commit -q -m "publish: from clomads/vault ${GITHUB_SHA::7}" && git push -q
+          fi
