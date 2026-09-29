@@ -6,7 +6,8 @@
   "scripts": {
     "check": "node scripts/validate.mjs",
     "build": "node scripts/build.mjs",
-    "publish": "node scripts/publish.mjs"
+    "publish": "node scripts/publish.mjs",
+    "watch": "node scripts/watch.mjs --out ../portfolio"
   },
   "engines": {
     "node": ">=20"
