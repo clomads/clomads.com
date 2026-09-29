@@ -8,6 +8,16 @@
     "year": 2025
   },
   {
+    "title": "eInk Oil Change Sticker",
+    "path": "/concepts/eink-oil-change-sticker/",
+    "section": "concepts",
+    "description": "A battery-free NFC ePaper display that replaces the oil change sticker, fed by Home Assistant and Node-RED.",
+    "hero": "/attachments/eink-oil-change-sticker-display.jpeg",
+    "years": "2022",
+    "year": 2022,
+    "status": "Concept"
+  },
+  {
     "title": "Can of Bliss",
     "path": "/design-web-and-film/can-of-bliss/",
     "section": "design-web-and-film",
