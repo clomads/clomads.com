@@ -196,7 +196,22 @@ export function transform(body, note) {
 }
 
 // ---------- write ----------
-fs.rmSync(DOCS, { recursive: true, force: true });
+// Files are written only when their content changes, and stale ones are pruned afterwards, so a running
+// dev server sees an edit as one changed file instead of the whole content folder vanishing and reappearing.
+const written = new Set();
+function put(file, content) {
+  written.add(file);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  if (!fs.existsSync(file) || fs.readFileSync(file, 'utf8') !== content) fs.writeFileSync(file, content);
+}
+function prune(dir) {
+  if (!fs.existsSync(dir)) return;
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const f = path.join(dir, ent.name);
+    if (ent.isDirectory()) { prune(f); if (!fs.readdirSync(f).length) fs.rmdirSync(f); }
+    else if (!written.has(f)) fs.rmSync(f);
+  }
+}
 fs.mkdirSync(DOCS, { recursive: true }); fs.mkdirSync(DATA, { recursive: true });
 const worksOut = [];
 const redirects = {};
@@ -243,26 +258,25 @@ for (const [n, p] of pathOf) {
   }
   if (p === 'index') {
     // landing page: src/data/home/meta.json + NN.md prose chunks and NN.cards.json card lists, in note order
-    const dir = path.join(DATA, 'home'); fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'meta.json'), JSON.stringify({ title: fm.title, description: fm.description ?? '' }, null, 2) + '\n');
+    const dir = path.join(DATA, 'home');
+    put(path.join(dir, 'meta.json'), JSON.stringify({ title: fm.title, description: fm.description ?? '' }, null, 2) + '\n');
     const parts = body.split(/^<!--cards:([^>]*)-->$/m); let i = 0;
     for (let k = 0; k < parts.length; k++) {
       const nn = String(i).padStart(2, '0');
-      if (k % 2 === 1) { fs.writeFileSync(path.join(dir, `${nn}.cards.json`), JSON.stringify({ cards: parts[k].split(',').filter(Boolean) }, null, 2) + '\n'); i++; }
-      else if (parts[k].trim()) { fs.writeFileSync(path.join(dir, `${nn}.md`), parts[k].trim() + '\n'); i++; }
+      if (k % 2 === 1) { put(path.join(dir, `${nn}.cards.json`), JSON.stringify({ cards: parts[k].split(',').filter(Boolean) }, null, 2) + '\n'); i++; }
+      else if (parts[k].trim()) { put(path.join(dir, `${nn}.md`), parts[k].trim() + '\n'); i++; }
     }
     continue;
   }
   const file = path.join(DOCS, `${p}.md`);
-  fs.mkdirSync(path.dirname(file), { recursive: true });
   const yaml = (await import('yaml')).default.stringify(fm, { lineWidth: 0 });
-  fs.writeFileSync(file, `---\n${yaml}---\n${body}`);
+  put(file, `---\n${yaml}---\n${body}`);
 }
-fs.writeFileSync(path.join(DATA, 'works.json'), JSON.stringify(worksOut.sort((a, b) => ((b.year ?? 0) - (a.year ?? 0)) || a.title.localeCompare(b.title)), null, 2) + '\n');
+put(path.join(DATA, 'works.json'), JSON.stringify(worksOut.sort((a, b) => ((b.year ?? 0) - (a.year ?? 0)) || a.title.localeCompare(b.title)), null, 2) + '\n');
 // old addresses of notes that are not (or no longer) published send people to the front page instead of a 404
 for (const n of notes) if (!pathOf.has(n)) for (const r of n.data.redirect_from ?? []) redirects['/' + r.replace(/^\/+/, '')] ??= '/';
-fs.writeFileSync(path.join(DATA, 'redirects.json'), JSON.stringify(Object.fromEntries(Object.entries(redirects).sort()), null, 2) + '\n');
-fs.writeFileSync(path.join(DATA, 'sections.json'), JSON.stringify(SECTIONS, null, 2) + '\n');
+put(path.join(DATA, 'redirects.json'), JSON.stringify(Object.fromEntries(Object.entries(redirects).sort()), null, 2) + '\n');
+put(path.join(DATA, 'sections.json'), JSON.stringify(SECTIONS, null, 2) + '\n');
 // Explicit sidebar: one group per section, then the standalone pages (About…)
 const link = (n) => { const p = pathOf.get(n); return p === 'index' ? '/' : `/${p}/`; };
 const orderOf = (n) => n.data.order ?? (n.data.year ? 3000 - n.data.year : 2000);
@@ -274,7 +288,8 @@ const sidebar = Object.entries(SECTIONS).map(([sec, secLabel]) => {
 }).filter(g => g.items.length);
 const pages = [...pathOf].filter(([n, p]) => n.data.type === 'page' && p !== 'index' && p !== '404').sort(([a], [b]) => (a.data.order ?? 0) - (b.data.order ?? 0));
 for (const [n] of pages) sidebar.push({ label: n.data.title, link: link(n) });
-fs.writeFileSync(path.join(DATA, 'sidebar.json'), JSON.stringify(sidebar, null, 2) + '\n');
+put(path.join(DATA, 'sidebar.json'), JSON.stringify(sidebar, null, 2) + '\n');
+prune(DOCS); prune(path.join(DATA, 'home'));
 // ---------- images ----------
 // Originals stay in the vault. Embedded images and heroes are capped at MAX_IMAGE_WIDTH and recompressed
 // (same file name and format, so nothing in the pages changes); a result is only kept when it is smaller.
@@ -325,7 +340,7 @@ fs.writeFileSync(path.join(DATA, 'sidebar.json'), JSON.stringify(sidebar, null, 
 // downloads copied untouched must match their source even if a stale optimized copy was kept
 for (const name of keepSet) { const src = byBasename.get(name), dest = path.join(ATT_OUT, name); if (src && fs.existsSync(dest) && unchanged.has(name) && optimizeSet.has(name)) fs.copyFileSync(src, dest); }
 for (const f of fs.existsSync(ATT_OUT) ? fs.readdirSync(ATT_OUT) : []) if (!copiedAssets.has(f)) fs.rmSync(path.join(ATT_OUT, f));
-fs.writeFileSync(MANIFEST, JSON.stringify(Object.fromEntries(Object.entries(manifestOut).sort()), null, 2) + '\n');
+put(MANIFEST, JSON.stringify(Object.fromEntries(Object.entries(manifestOut).sort()), null, 2) + '\n');
 console.log(`published ${pathOf.size} pages, ${copiedAssets.size} attachments, ${Object.keys(redirects).length} redirects -> ${rel(OUT) || OUT}`);
 for (const w of warnings) console.log('warning ' + w);
 for (const e of errors) console.log('problem ' + e);
