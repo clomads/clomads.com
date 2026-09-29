@@ -18,7 +18,7 @@ export default defineConfig({
   markdown: { remarkPlugins: [[remarkBase, { base: BASE }]] },
   integrations: [
     starlight({
-      title: 'Chloe Madison-Ryan',
+      title: 'Chloe Madison',
       description: 'A living portfolio in wiki form: design, web, film, and open hardware by @clomads.',
       customCss: ['./src/styles/clomads.css'],
       favicon: '/favicon.svg',
@@ -30,7 +30,7 @@ export default defineConfig({
         // The layout (rail, mobile nav, TOC bar, page headers, link buttons) lives in the shared theme.
         luna({
           logo: './src/logo.svg',
-          footer: ['clomads.com', 'Chloe Madison-Ryan', 'Joshua Tree, CA'],
+          footer: ['clomads.com', 'Chloe Madison', 'Joshua Tree, CA'],
           frontmatterKey: 'clomads',
           headerTypes: ['work'],
           statusLabels: { concept: 'Concept', ongoing: 'Ongoing', shelved: 'Shelved' },

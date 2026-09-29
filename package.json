@@ -2,7 +2,7 @@
   "name": "clomads-site",
   "private": true,
   "type": "module",
-  "description": "clomads.com — Chloe Madison-Ryan's portfolio and archive, built from the clomads vault",
+  "description": "clomads.com — Chloe Madison's portfolio and archive, built from the clomads vault",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
