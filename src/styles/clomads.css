@@ -1,10 +1,10 @@
 /* clomads.com — brand tokens over starlight-theme-luna and Starlight. Layout lives in the theme.
    Palette from the 2017 clomads swatch sheet: purple #b74aff, pink #ffb8d1, sage #c5dac1, blue #4bb3fd, slate #4d5061.
-   Chakra Petch's clipped corners echo the logo's octagonal PCB letterforms. */
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+   Headings in Knewave (one weight, 400), so the theme's bold headings are reset to its natural weight. */
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  --luna-display: "Chakra Petch", var(--sl-font);
+  --luna-display: "Knewave", var(--sl-font);
   --sl-font: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   --sl-font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --luna-logo: 9rem;
@@ -54,3 +54,6 @@
 .sl-markdown-content img { border-radius: 10px; }
 .sl-markdown-content figure { margin: 1.5rem 0; }
 .sl-markdown-content figcaption { margin-top: 0.5rem; font-size: 0.85rem; color: var(--sl-color-gray-3); }
+
+/* Knewave ships a single weight; keep headings from being faux-bolded */
+h1#_top, .sl-markdown-content :is(h1, h2, h3, h4) { font-weight: 400; letter-spacing: 0; }

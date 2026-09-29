@@ -44,7 +44,7 @@ const byPath = new Map(works.map((w) => [w.path, w]));
   .card .hero:hover img { transform: scale(1.03); }
   .card .hero-empty { display: grid; place-items: center; height: 100%; padding: 1rem; text-align: center; font-family: var(--luna-display); font-size: 1.75rem; color: var(--sl-color-black); }
   .card .tag { position: absolute; left: 0.75rem; bottom: 0.7rem; font-family: var(--sl-font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; background: rgb(0 0 0 / 0.65); padding: 0.25rem 0.5rem; border-radius: 6px; }
-  .card h2 { font-family: var(--luna-display); font-weight: 700; font-size: 1.6rem; line-height: 1.05; margin: 0.9rem 0 0.35rem; }
+  .card h2 { font-family: var(--luna-display); font-weight: 400; font-size: 1.6rem; line-height: 1.05; margin: 0.9rem 0 0.35rem; }
   .card h2 a { color: var(--sl-color-white); text-decoration: none; }
   .card h2 a:hover { color: var(--sl-color-accent); }
   .card p { color: var(--sl-color-gray-2); margin: 0; }
@@ -52,7 +52,7 @@ const byPath = new Map(works.map((w) => [w.path, w]));
   @media (max-width: 40rem) { .cards { grid-template-columns: 1fr; } }
   /* Prose from the Home note */
   .copy { max-width: 62ch; }
-  .copy :global(h2) { font-family: var(--luna-display); font-weight: 700; font-size: 2rem; line-height: 1.05; margin: 2.5rem 0 0.6rem; }
+  .copy :global(h2) { font-family: var(--luna-display); font-weight: 400; font-size: 2rem; line-height: 1.05; margin: 2.5rem 0 0.6rem; }
   .copy :global(h2:first-child) { margin-top: 0; }
   .copy :global(p), .copy :global(li) { color: var(--sl-color-gray-2); }
   .copy :global(p + p), .copy :global(ul + p), .copy :global(p + ul) { margin-top: 0.75rem; }
