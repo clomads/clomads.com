@@ -7,10 +7,6 @@ featured:
   - work/can-of-bliss
 ---
 
-- [Bluesky](https://clomads.bsky.social) — I'm finally leaving twitter. I might peek in there from time to time.
-- [VDBX.io](https://www.vdbx.io) — My retail brand for open hardware focused on off-grid systems integration.
-- [Redbubble](https://www.redbubble.com/people/clomads) — I design stickers from time to time.
-
 Hi Friends,
 
 I'm Chloe Madison, a visual artist and open hardware designer in ~~the Bay Area~~ Joshua Tree who lives in a shorty school bus. I do my best to document that work across various corners of the internet, and my current focus is [VDBX.io](https://www.vdbx.io) where certain designs of mine are more formally documented, open-sourced, and made available for purchase.
@@ -36,5 +32,3 @@ Love,
 Chloe Madison
 
 @clomads - [Twitter](https://twitter.com/clomads) • [Instagram](https://www.instagram.com/clomads) • [Mastodon](https://mastodon.social/@clomads) • [Tiktok](https://www.tiktok.com/@clomads) • [Youtube](https://www.youtube.com/clomads) • [Patreon](https://www.patreon.com/clomads)
-
-## Featured Projects

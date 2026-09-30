@@ -1,5 +1,5 @@
 ---
-// Landing page: src/content/home.md. Its body is the intro; `featured` lists page paths for the card grid.
+// Landing page: src/content/home.md. The card grid (`featured`: page paths) comes first, then the body text.
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { Image } from 'astro:assets';
 import { getEntry, render } from 'astro:content';
@@ -15,13 +15,12 @@ const cards = (await Promise.all(home.data.featured.map((id) => getEntry('docs',
 ---
 <StarlightPage frontmatter={{ title: home.data.title, description: home.data.description, tableOfContents: false, pagefind: false }}>
   <div class="landing not-content">
-    <section class="copy"><Content /></section>
     {cards.length > 0 && (
       <section class="cards">
         {cards.map((w) => (
           <article class="card">
             <a class="hero" href={`${base}/${w.id}/`} aria-label={w.title}>
-              {w.cover ? <Image src={w.cover} alt="" width={800} loading="lazy" /> : <span class="hero-empty">{w.title}</span>}
+              {w.cover ? <Image src={w.cover} alt="" width={800} loading="eager" /> : <span class="hero-empty">{w.title}</span>}
               {w.tag && <span class="tag">{w.tag}</span>}
             </a>
             <h2><a href={`${base}/${w.id}/`}>{w.title}</a></h2>
@@ -30,6 +29,7 @@ const cards = (await Promise.all(home.data.featured.map((id) => getEntry('docs',
         ))}
       </section>
     )}
+    <section class="copy"><Content /></section>
   </div>
 </StarlightPage>
 
