@@ -8,6 +8,15 @@
     "year": 2025
   },
   {
+    "title": "Single Motor Control For Klipper",
+    "path": "/personal/single-motor-control-for-klipper/",
+    "section": "personal",
+    "description": "An RP2040 stepper board that gets both its data and its motor power from one USB-C cable, using USB Power Delivery.",
+    "years": "2023",
+    "year": 2023,
+    "status": "Concept"
+  },
+  {
     "title": "eInk Oil Change Sticker",
     "path": "/personal/eink-oil-change-sticker/",
     "section": "personal",
@@ -119,13 +128,6 @@
     "section": "personal",
     "description": "",
     "status": "Shelved"
-  },
-  {
-    "title": "Single Motor Control For Klipper",
-    "path": "/personal/single-motor-control-for-klipper/",
-    "section": "personal",
-    "description": "RP2040 was over-hyped, but I kinda love how Klipper has implemented it.",
-    "status": "Concept"
   },
   {
     "title": "Voidbox Industries",

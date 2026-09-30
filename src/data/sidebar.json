@@ -60,6 +60,10 @@
         "link": "/personal/demon-core-disco-ball/"
       },
       {
+        "label": "Single Motor Control For Klipper",
+        "link": "/personal/single-motor-control-for-klipper/"
+      },
+      {
         "label": "eInk Oil Change Sticker",
         "link": "/personal/eink-oil-change-sticker/"
       },
@@ -70,10 +74,6 @@
       {
         "label": "Origami",
         "link": "/personal/origami/"
-      },
-      {
-        "label": "Single Motor Control For Klipper",
-        "link": "/personal/single-motor-control-for-klipper/"
       }
     ]
   }

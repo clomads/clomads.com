@@ -1,31 +1,39 @@
 ---
 title: Single Motor Control For Klipper
-description: RP2040 was over-hyped, but I kinda love how Klipper has implemented it.
+description: An RP2040 stepper board that gets both its data and its motor power from one USB-C cable, using USB Power Delivery.
 sidebar:
-  order: 2000
+  order: 977
 clomads:
   type: work
   section: personal
+  meta:
+    - "2023"
   status: concept
 ---
 ## Summary
 
-A simple circuit board consisting of a Raspberry Pi RP2040 and a single replaceable step-stick[^1]. It would have a USB-C connector for firmware and control, plus a DC power connector and standard JST header for the motor itself. It could theoretically be in the shape of the motor itself for mounting.
+A small board with an RP2040 and one replaceable stepper driver (a step-stick[^1]), connected to the printer's host with a single USB-C cable. The RP2040 runs Klipper's MCU firmware, so Klipper treats it as one more controller it can drive. A USB Power Delivery[^2] controller on the board asks the power source for a higher voltage than USB's 5 V, so the same cable that carries data can also run a motor.
 
-## History
+The motor would plug into a standard JST header, and the board could be shaped to mount right on the back of the motor.
 
-I've been upgrading my Ender 3v2 ever since I first got it and within a couple months I found the Klipper project and things have never been the same. I recently upgraded to a direct drive toolhead (Revo Hemera XS) leaving me with an extra motor from my old bowden extruder. I'd like it to be used as a second z-axis motor, but I'd rather it be independently controlled, which won't be possible with the Creality 4.2.2 board which is otherwise perfectly fine and I don't see any need to upgrade.
+## Why
 
-## Additional Thoughts
+I wanted a camera slider for print timelapses: a stepper that moves the camera a precise amount every layer, driven from a Klipper macro so it stays in sync with the print. Adding a motor to Klipper normally means a free driver on the mainboard, or another control board with its own power supply and wiring. One USB-C cable doing both jobs seemed much simpler.
 
-A while back I mentioned something about injecting PD power into USB-C cables already carrying a USB 2.0 signal, likely sourced from a USB-A port. I wonder what the possibility of this is, because this is basically a USB-C connected tool head.
+It started when I moved my Ender 3 V2 to a direct drive toolhead (a Revo Hemera XS) and had the old extruder motor left over. The printer's Creality 4.2.2 board had no free driver for it, and otherwise I had no reason to replace that board.
 
-Everyone is trying to send CAN up the line when we could just be figuring out how to inject proper power into a USB-C cable. TI has a wide range of PD controllers at first look, but I'd need to take a closer look.
+## USB-C and Power Delivery
 
-The heater for a Revo is 40w... I think the highest I've seen is 60w for other high flow... maybe 100w exists.
+A normal USB port only supplies 5 V, which is too little to do much with a stepper. With PD, a device can negotiate 9, 15, or 20 V at up to 5 A (100 W), and PD 3.1 adds 28, 36, and 48 V. The catch is that the source has to speak PD: a USB-C charger or a PD power injector in line with the data, not the plain USB port on a Raspberry Pi.
 
-I just had an absurd thought about a whole printer being wired with USB-C cables to each motor from a raspberry pi.
+At the time I was seeing toolhead boards that used USB-C connectors and cables to carry the printer's own power alongside USB data. As far as I could tell that was outside the USB spec, so a cable plugged into the wrong thing could do damage. I wondered whether real PD negotiation could do the same job safely. Most of the community was moving toolheads to CAN bus instead.
 
-1. USB-C 'Power Delivery' is the standard created to allow devices to negotiate voltage and current with the charger.
+A whole toolhead is a bigger ask than one motor: a Revo heater is 40 W and high-flow heaters run 60 W or more, on top of the motors and fans. 100 W of PD might cover it. Taken all the way, you could picture a printer wired entirely with USB-C, one cable from the host to each motor.
 
-[^1]: A "step-stick" is a colloquial term for small PCBs consisting of a stepper motor controller and some supporting hardware. They have had a consistent form-factor of a 2x8p 2.54mm DIP package for over a decade.
+## Where things are now
+
+I never built it. Klipper has supported the RP2040 for a while, and it has become a common chip in small Klipper add-ons, like the USB accelerometer boards used for input shaping. The pieces for this board exist; it would mostly be the PD controller and the power stage.
+
+[^1]: A "step-stick" is the common name for small stepper driver boards: a stepper motor controller chip and its supporting parts on a 2×8-pin, 2.54 mm pitch module. The form factor has stayed the same for over a decade, so drivers are easy to swap.
+
+[^2]: USB Power Delivery (PD) is the part of the USB-C standard that lets a device and a charger agree on a higher voltage and current than the default 5 V.
