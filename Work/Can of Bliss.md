@@ -1,7 +1,7 @@
 ---
 type: work
 title: Can of Bliss
-section: design-web-and-film
+section: work
 year: 2019
 role: Freelance Design Consulting & Production
 featured: true

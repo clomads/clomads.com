@@ -1,7 +1,7 @@
 ---
 type: work
 title: DetroitMusic.TV
-section: design-web-and-film
+section: work
 year: 2008
 until: 2015
 role: Partner/Video Producer/Graphics/Photograpy/Web Developer/Designer

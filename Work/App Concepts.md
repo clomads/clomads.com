@@ -1,10 +1,10 @@
 ---
 type: work
 title: App Concepts
-section: collections
+section: work
 description: Not everything gets made, but I'm still proud of this work.
 tags: []
-publish: true
+publish: false
 redirect_from:
   - collections/app-concepts
 ---

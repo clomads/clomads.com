@@ -1,7 +1,7 @@
 ---
 type: work
 title: Single Motor Control For Klipper
-section: concepts
+section: personal
 status: concept
 description: RP2040 was over-hyped, but I kinda love how Klipper has implemented it.
 tags: []

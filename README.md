@@ -24,7 +24,7 @@ Things you don't do: edit `X - Media/Templates/Work.md` (generated from the sche
 | field | what it is |
 |---|---|
 | `title` | as it reads on the site |
-| `section` | `design-web-and-film`, `personal-projects`, `concepts`, `collections` (folder = section title) |
+| `section` | `work` or `personal` (folder = section title) |
 | `year`, `until` | first and last year; `until` blank for a single year. `status: ongoing` shows "2020–" |
 | `role`, `client` | shown in the page header: *2014 · Lead UI Designer · for Nextwave* |
 | `status` | `concept`, `prototype`, `ongoing`, `complete`, `shelved` (optional; complete shows nothing) |
@@ -37,10 +37,8 @@ The full rules are in `_schema/work.yaml`. `redirect_from` (hidden in the templa
 ## What's where
 
 ```
-Design, Web & Film/     one note per piece, by section
-Personal Projects/
-Concepts/
-Collections/
+Work/                   one note per piece, by section: client work, VDBX, logos
+Personal/               personal projects and concepts
 Inbox/                  unsorted dumps (new notes land here)
 Pages/                  Home (landing page copy), later About, 404
 X - Media/Attachments/  every image and file

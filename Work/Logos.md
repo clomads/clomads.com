@@ -1,7 +1,8 @@
 ---
 type: work
 title: Logos
-section: collections
+section: work
+order: 5000
 description: Logo design is my passion
 tags: []
 publish: true

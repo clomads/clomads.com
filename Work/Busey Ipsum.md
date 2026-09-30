@@ -1,7 +1,7 @@
 ---
 type: work
 title: Busey Ipsum
-section: design-web-and-film
+section: work
 year: 2012
 until: 2017
 role: Web Developement & Design

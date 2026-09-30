@@ -1,7 +1,7 @@
 ---
 type: work
 title: Nextwave Media Lab
-section: design-web-and-film
+section: work
 year: 2012
 until: 2016
 role: Video Producer/UI Design/General Graphics/Photography

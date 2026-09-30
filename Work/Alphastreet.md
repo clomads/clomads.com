@@ -1,7 +1,7 @@
 ---
 type: work
 title: Alphastreet
-section: design-web-and-film
+section: work
 year: 2015
 until: 2017
 role: UX/UI Designer & Web Developer

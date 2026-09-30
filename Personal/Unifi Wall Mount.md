@@ -1,7 +1,7 @@
 ---
 type: work
 title: Unifi Wall Mount
-section: personal-projects
+section: personal
 year: 2016
 until: 2017
 role: Functional Palette Art

@@ -2,7 +2,7 @@
 // Work scaffold. Run "Templater: Create new note from template" and pick this file.
 const given = tp.file.title.startsWith("Untitled") ? "" : tp.file.title;
 const title = ((await tp.system.prompt("Title", given)) ?? given).trim() || "Untitled work";
-const sections = {"design-web-and-film":"Design, Web & Film","personal-projects":"Personal Projects","concepts":"Concepts","collections":"Collections"};
+const sections = {"work":"Work","personal":"Personal"};
 const section = (await tp.system.suggester(["Inbox (sort later)", ...Object.values(sections)], ["", ...Object.keys(sections)], false, "Section")) ?? "";
 const y = ((await tp.system.prompt("Year (blank if unsure)", "")) ?? "").trim();
 const year = /^\d{4}$/.test(y) ? y : "";

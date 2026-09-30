@@ -15,10 +15,11 @@ properties:
     description: Title as it should read on the site.
   section:
     type: string
-    enum: [design-web-and-film, personal-projects, concepts, collections]
+    enum: [work, personal]
     description: >
-      Site section, by URL slug. Titles are in x-sections below. Required to publish; a note in Inbox/
-      can leave it blank until it is sorted.
+      Site section, by URL slug: work (client jobs, VDBX, logo and app collections) or personal (personal
+      projects and concepts). Titles are in x-sections below. Required to publish; a note in Inbox/ can
+      leave it blank until it is sorted.
   year:
     type: integer
     minimum: 1990
@@ -46,7 +47,9 @@ properties:
     description: true puts it in the Featured cards on the home page.
   order:
     type: integer
-    description: Position in its section's menu (lower first). Without one, newest year first.
+    description: >
+      Position in its section's menu, lower first. Without one, newest year first (a year counts as
+      3000 minus the year, so 2014 sits at 986). Voidbox Industries uses 1 to lead Work, Logos 5000 to close it.
   description:
     type: string
     description: One line for the card and page meta.
@@ -86,10 +89,8 @@ properties:
     items: { type: string }
     x-hidden: true
 x-sections:
-  design-web-and-film: Design, Web & Film
-  personal-projects: Personal Projects
-  concepts: Concepts
-  collections: Collections
+  work: Work
+  personal: Personal
 x-template:
   type: work
   publish: false

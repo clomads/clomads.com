@@ -1,7 +1,7 @@
 ---
 type: work
 title: SudoTV
-section: design-web-and-film
+section: work
 year: 2009
 until: 2015
 role: Concept/Design/Branding/Video Production/Web Developer

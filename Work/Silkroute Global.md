@@ -1,7 +1,7 @@
 ---
 type: work
 title: Silkroute Global
-section: design-web-and-film
+section: work
 year: 2012
 until: 2015
 role: Design Lead / Web Development / Video Producer / Animator

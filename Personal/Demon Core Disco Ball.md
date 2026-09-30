@@ -1,7 +1,7 @@
 ---
 type: work
 title: Demon Core Disco Ball
-section: personal-projects
+section: personal
 year: 2025
 description: A campy art meme
 tags: []

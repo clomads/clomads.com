@@ -1,7 +1,8 @@
 ---
 type: work
 title: Voidbox Industries
-section: personal-projects
+section: work
+order: 1
 status: ongoing
 featured: true
 description: My current retail and manufacturing brand for open source hardware

@@ -1,7 +1,7 @@
 ---
 type: work
 title: eInk Oil Change Sticker
-section: concepts
+section: personal
 year: 2022
 status: concept
 description: A battery-free NFC ePaper display that replaces the oil change sticker, fed by Home Assistant and Node-RED.

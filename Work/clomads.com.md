@@ -1,7 +1,7 @@
 ---
 type: work
 title: clomads.com
-section: design-web-and-film
+section: work
 description: Variations of my personal site over the years
 tags: []
 publish: true

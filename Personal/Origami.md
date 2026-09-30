@@ -1,7 +1,7 @@
 ---
 type: work
 title: Origami
-section: concepts
+section: personal
 status: shelved
 tags: []
 publish: true
