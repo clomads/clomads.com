@@ -1,6 +1,6 @@
 ---
 type: work
-title: Single Motor Control For Klipper
+title: USB-C Stepper for Klipper
 section: personal
 year: 2023
 status: concept
