@@ -1,0 +1,11 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Inbox",
+  "attachmentFolderPath": "X - Media/Attachments",
+  "userIgnoreFilters": [
+    "node_modules/",
+    "scripts/",
+    "_schema/"
+  ]
+}

@@ -1,0 +1,20 @@
+# macOS / sync noise
+.DS_Store
+*conflicted copy*
+*~lock~*
+.trash/
+
+# Obsidian per-machine state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/file-recovery.json
+
+# Community plugin code is per-install; keep only manifest + settings
+.obsidian/plugins/*/*
+!.obsidian/plugins/*/manifest.json
+!.obsidian/plugins/*/data.json
+
+# Tooling
+node_modules/

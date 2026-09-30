@@ -1,0 +1,20 @@
+{
+  "name": "clomads-vault",
+  "private": true,
+  "type": "module",
+  "description": "clomads.com archive vault: schemas, validator, and the publish step that feeds the site",
+  "scripts": {
+    "check": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "publish": "node scripts/publish.mjs",
+    "watch": "node scripts/watch.mjs --out ../portfolio"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "sharp": "^0.35.4",
+    "yaml": "^2.6.1"
+  }
+}
