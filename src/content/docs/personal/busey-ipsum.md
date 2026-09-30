@@ -1,10 +1,10 @@
 ---
 title: Busey Ipsum
 sidebar:
-  order: 988
+  order: 2
 clomads:
   type: work
-  section: work
+  section: personal
   meta:
     - 2012–2017
     - Web Developement & Design

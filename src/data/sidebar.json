@@ -19,10 +19,6 @@
         "link": "/work/routes/"
       },
       {
-        "label": "Busey Ipsum",
-        "link": "/work/busey-ipsum/"
-      },
-      {
         "label": "Nextwave Media Lab",
         "link": "/work/nextwave-media-lab/"
       },
@@ -52,6 +48,14 @@
     "label": "Personal",
     "items": [
       {
+        "label": "Gary Bussy",
+        "link": "/personal/gary-bussy/"
+      },
+      {
+        "label": "Busey Ipsum",
+        "link": "/personal/busey-ipsum/"
+      },
+      {
         "label": "Demon Core Disco Ball",
         "link": "/personal/demon-core-disco-ball/"
       },
@@ -62,10 +66,6 @@
       {
         "label": "Unifi Wall Mount",
         "link": "/personal/unifi-wall-mount/"
-      },
-      {
-        "label": "Gary Bussy",
-        "link": "/personal/gary-bussy/"
       },
       {
         "label": "Origami",

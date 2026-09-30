@@ -2,7 +2,7 @@
 title: Gary Bussy
 description: A platform for testing DIY off-grid automation hardware. Also my house.
 sidebar:
-  order: 2000
+  order: 1
 clomads:
   type: work
   section: personal
