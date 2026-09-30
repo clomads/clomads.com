@@ -9,8 +9,6 @@ clomads:
   meta:
     - "2022"
   status: concept
-  links:
-    - url: https://github.com/clomads/things-masterlist/blob/main/prototype/eInk%20Oil%20Change%20Sticker.md
 ---
 WORK IN PROGRESS
 
