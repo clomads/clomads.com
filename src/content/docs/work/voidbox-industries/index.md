@@ -16,6 +16,7 @@ Voidbox Industries sprang out of a need to keep my mind busy after losing my las
 
 Conceptual designs had the electronics and concrete work meeting in the middle, but then COVID hit and everything changed, forcing me to focus more on the electronics side of things. While we were in the thick of COVID, I ended up trading the tiny van I lived in for a shorty school bus that I wired up with solar and lithium batteries.
 
+
 Years earlier I had developed an interest in the open-source Home Assistant project, but never had the time or space to really dive in, until the bus, but it brought its own challenges due to most IOT devices assuming you're living in a house with AC wiring. This is where the pivot for VDBX started happening, tho life made it so it was just research for the next couple years.
 
 VDBX relaunched in 2023 with a focus on Home Assistant focused hardware for off-grid installations. Coming into 2025, I have a healthy start to a microcontroller platform and a Crowd Supply coming soon.  I hope that within a year or two I can hire my friends to help with production and turn it into a worker-owned co-op. Within the theme of automation, I hope to also document our local manufacturing / QA / packaging operations for all to benefit from.
