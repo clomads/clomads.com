@@ -1,19 +1,27 @@
-// Live preview helper: re-runs the publish step whenever a note or attachment changes.
-// Usage: node scripts/watch.mjs --out ../portfolio   (run the site's `npm run dev` alongside it)
+// Live preview: runs the site's dev server and re-publishes into it whenever a note or attachment changes.
+// Usage: node scripts/watch.mjs --out ../portfolio   (npm run watch), then open http://127.0.0.1:4332/
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { ROOT } from './lib.mjs';
 
 const args = process.argv.slice(2);
 const OUT = path.resolve(ROOT, args[args.indexOf('--out') + 1]);
 // The menu and redirects are read by astro.config.mjs, which the dev server only loads at start. When they
-// change, touching the config makes Astro restart itself and pick them up.
+// change the dev server is stopped and started again (Astro's own config-reload restart stops watching content).
 const CONFIG_DATA = ['sidebar.json', 'redirects.json'].map((f) => path.join(OUT, 'src', 'data', f));
 const snapshot = () => CONFIG_DATA.map((f) => (fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : '')).join('\0');
 let lastConfig = snapshot();
 const IGNORE = /(^|\/)(\.git|\.obsidian|node_modules|\.trash|scripts|_schema)(\/|$)/;
 let timer = null, running = false, again = false;
+
+const ASTRO = path.join(OUT, 'node_modules', '.bin', 'astro');
+const DEV_ARGS = ['dev', '--port', '4332', '--host', '127.0.0.1'];
+function startDev() {
+  spawnSync(ASTRO, ['dev', 'stop'], { cwd: OUT, stdio: 'ignore' });   // a dev server left running from earlier
+  spawn(ASTRO, DEV_ARGS, { cwd: OUT, stdio: 'inherit' });
+}
+process.on('SIGINT', () => { spawnSync(ASTRO, ['dev', 'stop'], { cwd: OUT, stdio: 'ignore' }); process.exit(0); });
 
 function publish() {
   if (running) { again = true; return; }
@@ -27,9 +35,8 @@ function publish() {
     const now = snapshot();
     if (now !== lastConfig) {
       lastConfig = now;
-      const cfg = path.join(OUT, 'astro.config.mjs'), t2 = new Date();
-      fs.utimesSync(cfg, t2, t2);
       console.log('  menu or redirects changed: restarting the dev server');
+      startDev();
     }
     running = false;
     if (again) { again = false; publish(); }
@@ -55,3 +62,4 @@ function watchTree(dir) {
 watchTree(ROOT);
 console.log('watching the vault; edits publish on save');
 publish();
+startDev();
