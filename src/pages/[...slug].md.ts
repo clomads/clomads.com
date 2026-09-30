@@ -2,7 +2,7 @@ import type { APIRoute, GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const docs = await getCollection('docs');
+  const docs = await getCollection('docs', (d) => !(import.meta.env.PROD && d.data.draft));
   return docs.map((d) => ({ params: { slug: d.id }, props: { body: d.body ?? '', title: d.data.title } }));
 };
 

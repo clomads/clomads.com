@@ -2,9 +2,9 @@
   "name": "clomads-site",
   "private": true,
   "type": "module",
-  "description": "clomads.com — Chloe Madison's portfolio and archive, built from the clomads vault",
+  "description": "clomads.com \u2014 Chloe Madison's portfolio and archive",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --port 4332 --host 127.0.0.1",
     "build": "astro build",
     "preview": "astro preview"
   },
@@ -17,6 +17,7 @@
     "astro": "^7.3.2",
     "sharp": "^0.35.4",
     "starlight-llms-txt": "^0.11.0",
-    "starlight-theme-luna": "github:vdbxio/starlight-theme-luna"
+    "starlight-theme-luna": "github:vdbxio/starlight-theme-luna",
+    "yaml": "^2.9.1"
   }
 }

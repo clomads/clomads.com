@@ -1,0 +1,7 @@
+{
+  // Pasted or dropped images land in the page's own folder, named after the file
+  "markdown.copyFiles.destination": { "src/content/**/*.md": "${documentDirName}/" },
+  "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
+  "files.exclude": { "dist": true, ".astro": true, "node_modules": true },
+  "search.exclude": { "dist": true, ".astro": true, "node_modules": true, "package-lock.json": true }
+}

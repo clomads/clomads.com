@@ -1,0 +1,47 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.framework.startCommand": "npm run dev",
+  "frontMatter.preview.host": "http://127.0.0.1:4332",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.content.pageFolders": [
+    { "title": "Work", "path": "[[workspace]]/src/content/docs/work", "previewPath": "/work", "trailingSlash": true, "contentTypes": ["page"] },
+    { "title": "Personal", "path": "[[workspace]]/src/content/docs/personal", "previewPath": "/personal", "trailingSlash": true, "contentTypes": ["page"] },
+    { "title": "Home", "path": "[[workspace]]/src/content", "excludeSubdir": true, "disableCreation": true, "previewPath": "/", "contentTypes": ["home"] }
+  ],
+  "frontMatter.content.draftField": { "name": "draft", "type": "boolean" },
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "page",
+      "pageBundle": true,
+      "defaultFileName": "index",
+      "clearEmpty": true,
+      "previewPath": "{{pathToken.relPath}}",
+      "fields": [
+        { "title": "Title", "name": "title", "type": "string", "single": true, "required": true },
+        { "title": "Description", "name": "description", "type": "string", "description": "One line for the card and search results" },
+        { "title": "Year", "name": "year", "type": "number", "numberOptions": { "isDecimal": false, "min": 1990, "max": 2100 } },
+        { "title": "Until", "name": "until", "type": "number", "description": "Last year, if it spanned several", "numberOptions": { "isDecimal": false, "min": 1990, "max": 2100 } },
+        { "title": "Role", "name": "role", "type": "string", "single": true },
+        { "title": "Client", "name": "client", "type": "string", "single": true, "description": "Blank for personal work" },
+        { "title": "Status", "name": "status", "type": "choice", "choices": ["concept", "prototype", "ongoing", "complete", "shelved"] },
+        { "title": "Menu order", "name": "order", "type": "number", "description": "Lower comes first; blank sorts newest year first" },
+        { "title": "Cover", "name": "cover", "type": "image", "isPreviewImage": true, "description": "An image in this page's folder, e.g. ./photo.jpg" },
+        { "title": "Links", "name": "links", "type": "list", "description": "URLs shown as buttons under the title" },
+        { "title": "Tags", "name": "tags", "type": "tags" },
+        { "title": "Draft", "name": "draft", "type": "draft", "description": "Drafts show in the local preview but not on the live site" },
+        { "title": "Old addresses", "name": "redirect_from", "type": "list", "description": "Old paths without the leading slash; they redirect here" }
+      ]
+    },
+    {
+      "name": "home",
+      "fields": [
+        { "title": "Title", "name": "title", "type": "string", "single": true, "required": true },
+        { "title": "Description", "name": "description", "type": "string" },
+        { "title": "Featured pages", "name": "featured", "type": "list", "description": "Card grid, in order: paths like work/routes" }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.frontMatterType": "YAML",
+  "frontMatter.dashboard.openOnStart": false
+}

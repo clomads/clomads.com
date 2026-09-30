@@ -4,18 +4,18 @@ import starlight from '@astrojs/starlight';
 import starlightLlmsTxt from 'starlight-llms-txt';
 import luna from 'starlight-theme-luna';
 import remarkBase from 'starlight-theme-luna/remark-base';
-import redirects from './src/data/redirects.json' with { type: 'json' };
-import sidebar from './src/data/sidebar.json' with { type: 'json' };
+import remarkClomads from './src/lib/remark-clomads.mjs';
+import { contentRedirects } from './src/lib/redirects.mjs';
 
 const BASE = (process.env.SITE_BASE ?? '/').replace(/\/$/, '');
 
-// SITE_URL / SITE_BASE let the same build serve the GitHub Pages preview (…github.io/portfolio/) and clomads.com.
+// SITE_URL / SITE_BASE let the same build serve a GitHub Pages preview (…github.io/clomads.com/) and clomads.com.
 export default defineConfig({
   site: process.env.SITE_URL ?? 'https://clomads.com',
   base: process.env.SITE_BASE ?? '/',
   trailingSlash: 'always',
-  redirects,
-  markdown: { remarkPlugins: [[remarkBase, { base: BASE }]] },
+  redirects: contentRedirects(new URL('./src/content/docs/', import.meta.url).pathname),
+  markdown: { remarkPlugins: [remarkClomads, [remarkBase, { base: BASE }]] },
   integrations: [
     starlight({
       title: 'Chloe Madison',
@@ -38,8 +38,9 @@ export default defineConfig({
         }),
         starlightLlmsTxt(),
       ],
-      sidebar,
-      // vault H1/H2/H3 sections publish as H2/H3/H4 (the title is the page's H1); keep all three in the TOC
+      // the rail menu is built from the pages in src/routeData.ts, so it follows edits without a restart
+      routeMiddleware: './src/routeData.ts',
+      // the title is the page's H1; sections are ## and below
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/clomads' },
