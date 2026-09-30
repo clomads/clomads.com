@@ -15,7 +15,7 @@ Around 2011/2012, it was popular in web design circles to create silly Ipsum gen
 
 Unfortunately it was PHP and way too heavy for what it was, so in around 2017 I rewrote the whole thing as a static page with the functionality in Javascript, while taking the time to modernize the design.
 
- It still currently resides at [buseyipsum.com](http://www.buseyipsum.com) and is hosted by Github pages.
+It still currently resides at [buseyipsum.com](http://www.buseyipsum.com) and is hosted by Github pages.
 
 ## History
 
