@@ -2,6 +2,7 @@
 type: work
 title: Gary Bussy
 section: personal
+order: 1
 status: ongoing
 featured: true
 description: A platform for testing DIY off-grid automation hardware. Also my house.

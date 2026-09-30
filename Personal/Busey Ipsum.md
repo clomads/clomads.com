@@ -1,7 +1,8 @@
 ---
 type: work
 title: Busey Ipsum
-section: work
+section: personal
+order: 2
 year: 2012
 until: 2017
 role: Web Developement & Design
