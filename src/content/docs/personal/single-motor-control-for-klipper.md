@@ -1,5 +1,5 @@
 ---
-title: Single Motor Control For Klipper
+title: USB-C Stepper for Klipper
 description: An RP2040 stepper board that gets both its data and its motor power from one USB-C cable, using USB Power Delivery.
 sidebar:
   order: 977
