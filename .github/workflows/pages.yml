@@ -1,7 +1,7 @@
 name: pages
 on:
   push:
-    branches: [main, astro]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -25,8 +25,8 @@ jobs:
       - name: Build (preview URL until the custom domain is set)
         run: npm run build
         env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://clomads.github.io' }}
-          SITE_BASE: ${{ vars.SITE_BASE || '/clomads.com' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://clomads.com' }}
+          SITE_BASE: ${{ vars.SITE_BASE || '/' }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
