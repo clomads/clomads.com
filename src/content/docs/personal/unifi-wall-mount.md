@@ -5,7 +5,7 @@ sidebar:
   order: 984
 clomads:
   type: work
-  section: personal-projects
+  section: personal
   meta:
     - 2016–2017
     - Functional Palette Art

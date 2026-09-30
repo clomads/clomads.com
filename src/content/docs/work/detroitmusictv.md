@@ -5,7 +5,7 @@ sidebar:
   order: 992
 clomads:
   type: work
-  section: design-web-and-film
+  section: work
   meta:
     - 2008–2015
     - Partner/Video Producer/Graphics/Photograpy/Web Developer/Designer

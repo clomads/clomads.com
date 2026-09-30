@@ -5,7 +5,7 @@ sidebar:
   order: 978
 clomads:
   type: work
-  section: concepts
+  section: personal
   meta:
     - "2022"
   status: concept

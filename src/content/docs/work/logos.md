@@ -2,10 +2,10 @@
 title: Logos
 description: Logo design is my passion
 sidebar:
-  order: 2000
+  order: 5000
 clomads:
   type: work
-  section: collections
+  section: work
 ---
 :::note
 I'm building this page on the fly with assets that I have on hand. There are a few logos in here that are better suited for light backgrounds. I'll update them as I have time, but would prefer putting up what I have as a placeholder until then or I'll never do it.

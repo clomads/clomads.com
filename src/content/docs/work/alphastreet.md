@@ -4,7 +4,7 @@ sidebar:
   order: 985
 clomads:
   type: work
-  section: design-web-and-film
+  section: work
   meta:
     - 2015–2017
     - UX/UI Designer & Web Developer

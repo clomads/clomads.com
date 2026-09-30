@@ -33,6 +33,7 @@ export default defineConfig({
           footer: ['clomads.com', 'Chloe Madison', 'Joshua Tree, CA'],
           frontmatterKey: 'clomads',
           headerTypes: ['work'],
+          openSections: true,
           statusLabels: { concept: 'Concept', ongoing: 'Ongoing', shelved: 'Shelved' },
         }),
         starlightLlmsTxt(),

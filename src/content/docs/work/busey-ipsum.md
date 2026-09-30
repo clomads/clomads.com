@@ -4,7 +4,7 @@ sidebar:
   order: 988
 clomads:
   type: work
-  section: design-web-and-film
+  section: work
   meta:
     - 2012–2017
     - Web Developement & Design

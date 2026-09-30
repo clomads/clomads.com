@@ -5,7 +5,7 @@ sidebar:
   order: 988
 clomads:
   type: work
-  section: design-web-and-film
+  section: work
   meta:
     - 2012–2015
     - Design Lead / Web Development / Video Producer / Animator

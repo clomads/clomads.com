@@ -5,7 +5,7 @@ sidebar:
   order: 975
 clomads:
   type: work
-  section: personal-projects
+  section: personal
   meta:
     - "2025"
 ---

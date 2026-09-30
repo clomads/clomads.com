@@ -5,7 +5,7 @@ sidebar:
   order: 991
 clomads:
   type: work
-  section: design-web-and-film
+  section: work
   meta:
     - 2009–2015
     - Concept/Design/Branding/Video Production/Web Developer

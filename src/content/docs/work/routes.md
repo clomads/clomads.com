@@ -4,7 +4,7 @@ sidebar:
   order: 986
 clomads:
   type: work
-  section: design-web-and-film
+  section: work
   meta:
     - "2014"
     - Lead UI Designer / Art Director

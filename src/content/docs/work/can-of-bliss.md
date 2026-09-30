@@ -5,7 +5,7 @@ sidebar:
   order: 981
 clomads:
   type: work
-  section: design-web-and-film
+  section: work
   meta:
     - "2019"
     - Freelance Design Consulting & Production

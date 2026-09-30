@@ -1,93 +1,79 @@
 [
   {
-    "label": "Design, Web & Film",
+    "label": "Work",
     "items": [
       {
+        "label": "Voidbox Industries",
+        "link": "/work/vdbxio-voidbox-industries/"
+      },
+      {
         "label": "Can of Bliss",
-        "link": "/design-web-and-film/can-of-bliss/"
+        "link": "/work/can-of-bliss/"
       },
       {
         "label": "Alphastreet",
-        "link": "/design-web-and-film/alphastreet/"
+        "link": "/work/alphastreet/"
       },
       {
         "label": "Routes",
-        "link": "/design-web-and-film/routes/"
+        "link": "/work/routes/"
       },
       {
         "label": "Busey Ipsum",
-        "link": "/design-web-and-film/busey-ipsum/"
+        "link": "/work/busey-ipsum/"
       },
       {
         "label": "Nextwave Media Lab",
-        "link": "/design-web-and-film/nextwave-media-lab/"
+        "link": "/work/nextwave-media-lab/"
       },
       {
         "label": "Silkroute Global",
-        "link": "/design-web-and-film/silkroute-global/"
+        "link": "/work/silkroute-global/"
       },
       {
         "label": "SudoTV",
-        "link": "/design-web-and-film/sudotv/"
+        "link": "/work/sudotv/"
       },
       {
         "label": "DetroitMusic.TV",
-        "link": "/design-web-and-film/detroitmusictv/"
+        "link": "/work/detroitmusictv/"
       },
       {
         "label": "clomads.com",
-        "link": "/design-web-and-film/clomadscom/"
-      }
-    ]
-  },
-  {
-    "label": "Personal Projects",
-    "items": [
-      {
-        "label": "Demon Core Disco Ball",
-        "link": "/personal-projects/demon-core-disco-ball/"
-      },
-      {
-        "label": "Unifi Wall Mount",
-        "link": "/personal-projects/unifi-wall-mount/"
-      },
-      {
-        "label": "Gary Bussy",
-        "link": "/personal-projects/gary-bussy/"
-      },
-      {
-        "label": "Voidbox Industries",
-        "link": "/personal-projects/vdbxio-voidbox-industries/"
-      }
-    ]
-  },
-  {
-    "label": "Concepts",
-    "items": [
-      {
-        "label": "eInk Oil Change Sticker",
-        "link": "/concepts/eink-oil-change-sticker/"
-      },
-      {
-        "label": "Origami",
-        "link": "/concepts/origami/"
-      },
-      {
-        "label": "Single Motor Control For Klipper",
-        "link": "/concepts/single-motor-control-for-klipper/"
-      }
-    ]
-  },
-  {
-    "label": "Collections",
-    "items": [
-      {
-        "label": "App Concepts",
-        "link": "/collections/app-concepts/"
+        "link": "/work/clomadscom/"
       },
       {
         "label": "Logos",
-        "link": "/collections/logos/"
+        "link": "/work/logos/"
+      }
+    ]
+  },
+  {
+    "label": "Personal",
+    "items": [
+      {
+        "label": "Demon Core Disco Ball",
+        "link": "/personal/demon-core-disco-ball/"
+      },
+      {
+        "label": "eInk Oil Change Sticker",
+        "link": "/personal/eink-oil-change-sticker/"
+      },
+      {
+        "label": "Unifi Wall Mount",
+        "link": "/personal/unifi-wall-mount/"
+      },
+      {
+        "label": "Gary Bussy",
+        "link": "/personal/gary-bussy/"
+      },
+      {
+        "label": "Origami",
+        "link": "/personal/origami/"
+      },
+      {
+        "label": "Single Motor Control For Klipper",
+        "link": "/personal/single-motor-control-for-klipper/"
       }
     ]
   }

@@ -5,7 +5,7 @@ sidebar:
   order: 2000
 clomads:
   type: work
-  section: personal-projects
+  section: personal
   status: ongoing
   hero: /attachments/IMG_2909.JPG
 ---

@@ -2,10 +2,10 @@
 title: Voidbox Industries
 description: My current retail and manufacturing brand for open source hardware
 sidebar:
-  order: 2000
+  order: 1
 clomads:
   type: work
-  section: personal-projects
+  section: work
   status: ongoing
   hero: /attachments/Flip%20C3%20oshwalab.jpg
 ---

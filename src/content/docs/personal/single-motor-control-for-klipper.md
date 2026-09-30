@@ -5,7 +5,7 @@ sidebar:
   order: 2000
 clomads:
   type: work
-  section: concepts
+  section: personal
   status: concept
 ---
 ## Summary

@@ -5,6 +5,6 @@ sidebar:
   order: 2000
 clomads:
   type: work
-  section: design-web-and-film
+  section: work
 ---
 <figure><img src="/attachments/home-v1.2%20copy%202.png" alt="" /><figcaption>Prototype of clomads.com - Active 2015-2017</figcaption></figure>
