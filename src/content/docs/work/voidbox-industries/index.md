@@ -22,7 +22,7 @@ VDBX relaunched in 2023 with a focus on Home Assistant focused hardware for off-
 
 ## Brand
 
-The name Voidbox came from a concrptual design I had in my head for lamps created with Vantablack alternatives so that the viewer would be confused about the source of light. At the time only Stuart Semple's Black 2.0 was available and didn't create the effect I was hoping for. I have yet to try with Black 3.0 and fuck Anish Kapoor.
+The name Voidbox came from a conceptual design I had in my head for lamps created with Vantablack alternatives so that the viewer would be confused about the source of light. At the time only Stuart Semple's Black 2.0 was available and didn't create the effect I was hoping for. I have yet to try with Black 3.0 and fuck Anish Kapoor.
 
 I eventually broke down Voidbox to VDBX while doing a domain search and found that VDBX.io was available. It wasn't until a little while later that I realized that I & O are the vowels removed from Voidbox to make VDBX.
 

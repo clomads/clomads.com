@@ -21,7 +21,7 @@ src/content/
 
 | I want to… | Do this |
 |---|---|
-| Add a page | Front Matter panel → **Create content** → Work or Personal. Or copy a folder and edit it. |
+| Add a page | Copy an existing page's folder, rename it (the name is the address), and edit `index.md`. |
 | Keep it off the live site | `draft: true`. Drafts still show in the local preview, marked "· draft" in the menu. |
 | Add an image | Paste or drop it into the page in VS Code; it's saved next to `index.md`. Written as `![](./photo.jpg)`. |
 | Set an image's width | `![|400](./photo.jpg)`; the site resizes it to 400 px. |
@@ -47,7 +47,7 @@ The page title is the H1, so sections inside a page start at `##`.
 | `links` | URLs shown as buttons, named by host |
 | `tags`, `draft`, `redirect_from` | free-form tags; keep off the live site; old addresses |
 
-The rules are in `src/content.config.ts`; the dev server and the Astro extension flag anything that breaks them. The Front Matter CMS extension reads the same fields from `frontmatter.json`.
+The rules are in `src/content.config.ts`; the dev server and the Astro extension flag anything that breaks them.
 
 ## How it's put together
 
