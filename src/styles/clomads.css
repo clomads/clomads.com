@@ -57,3 +57,6 @@
 
 /* Knewave ships a single weight; keep headings from being faux-bolded */
 h1#_top, .sl-markdown-content :is(h1, h2, h3, h4) { font-weight: 400; letter-spacing: 0; }
+
+/* rail footer: five tool buttons (search, theme, GitHub, Bluesky, Instagram) on one line */
+:root .rail .tools { gap: 0.25rem; }
