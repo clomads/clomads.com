@@ -1,0 +1,73 @@
+# voidCMS schema for src/content/docs. Mirrors the docs collection in src/content.config.ts
+# (Starlight docsSchema plus the extend block); keep the two in step when a field changes.
+$id: note
+title: Note
+description: >
+  A page on clomads.com: src/content/docs/<section>/<slug>/index.md with its images beside it.
+  The section is the folder (work, personal).
+type: object
+required: [title]
+properties:
+  title:
+    type: string
+    minLength: 1
+  description:
+    type: string
+  draft:
+    type: boolean
+    description: true keeps the page out of the built site.
+  year:
+    type: integer
+    minimum: 1990
+    maximum: 2100
+    description: First year of the work (or the only one).
+  until:
+    type: integer
+    minimum: 1990
+    maximum: 2100
+    description: Last year, for work that spanned several.
+  role:
+    type: string
+    description: What you did, e.g. "Lead UI Designer / Art Director".
+  client:
+    type: string
+    description: Who it was for; blank for personal work.
+  status:
+    type: string
+    enum: [concept, prototype, ongoing, complete, shelved]
+    description: complete shows nothing; ongoing with no until shows "2020–".
+  order:
+    type: number
+    description: Position in the section menu, lower first. Default is newest year first.
+  cover:
+    type: string
+    description: Cover image for the card and page header, a file in the page folder (./photo.jpg).
+  links:
+    type: array
+    items:
+      anyOf:
+        - { type: string }
+        - type: object
+          required: [url]
+          properties:
+            url: { type: string }
+            label: { type: string }
+  tags:
+    type: array
+    items: { type: string }
+  redirect_from:
+    type: array
+    items: { type: string }
+    description: Old addresses of this page, without the leading slash.
+    x-hidden: true
+  clomads:
+    description: Filled in by src/routeData.ts; not written by hand.
+    x-hidden: true
+x-sections:
+  work: Work
+  personal: Personal
+x-card:
+  title: title
+  hero: cover
+  number: year
+  publish: "!draft"

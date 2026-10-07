@@ -1,0 +1,11 @@
+{
+  "name": "clomads.com",
+  "schema": "_schema",
+  "collections": [
+    {
+      "path": "src/content/docs",
+      "sectionFromFolder": true,
+      "schema": "note"
+    }
+  ]
+}
